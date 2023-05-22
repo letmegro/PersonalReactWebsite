@@ -1,8 +1,10 @@
 import './App.css';
-import ParticleOptions from './Config/ParticleConfig';
+import Particle from './components/Particle';
+
 function App() {
   return (
     <div className="App">
+      <Particle/>
       <header className="App-header">
         
       </header>

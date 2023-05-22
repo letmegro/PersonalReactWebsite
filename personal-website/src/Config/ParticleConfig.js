@@ -2,7 +2,7 @@ const ParticleOptions = {
   autoPlay: true,
   background: {
     color: {
-      value: "#000"
+      value: "transparent"
     },
     image: "",
     position: "",
@@ -24,13 +24,13 @@ const ParticleOptions = {
   delay: 0,
   fullScreen: {
     enable: true,
-    zIndex: -1
+    zIndex: 1
   },
   detectRetina: true,
   duration: 0,
-  fpsLimit: 60,
+  fpsLimit: 120,
   interactivity: {
-    detectsOn: "canvas",
+    detectsOn: "window",
     events: {
       onClick: {
         enable: false,
@@ -43,8 +43,8 @@ const ParticleOptions = {
         type: "circle"
       },
       onHover: {
-        enable: false,
-        mode: "trail",
+        enable: true,
+        mode: "repulse",
         parallax: {
           enable: false,
           force: 2,
@@ -103,7 +103,7 @@ const ParticleOptions = {
         quantity: 2
       },
       repulse: {
-        distance: 200,
+        distance: 100,
         duration: 0.4,
         factor: 100,
         speed: 1,
@@ -228,7 +228,7 @@ const ParticleOptions = {
       }
     },
     color: {
-      value: "#ff0000",
+      value: "#fff000",
       animation: {
         h: {
           count: 0,
@@ -256,7 +256,40 @@ const ParticleOptions = {
         }
       }
     },
-    groups: {},
+    groups: {
+      z5000: {
+        number: {
+          value: 70
+        },
+        zIndex: {
+          value: 50
+        }
+      },
+      z7500: {
+        number: {
+          value: 30
+        },
+        zIndex: {
+          value: 75
+        }
+      },
+      z2500: {
+        number: {
+          value: 50
+        },
+        zIndex: {
+          value: 25
+        }
+      },
+      z1000: {
+        number: {
+          value: 40
+        },
+        zIndex: {
+          value: 10
+        }
+      }
+    },
     move: {
       angle: {
         offset: 0,
@@ -317,11 +350,7 @@ const ParticleOptions = {
       trail: {
         enable: false,
         length: 10,
-        fill: {
-          color: {
-            value: "#000000"
-          }
-        }
+        fill: {}
       },
       vibrate: false,
       warp: false
@@ -540,7 +569,7 @@ const ParticleOptions = {
       distance: 100,
       enable: true,
       frequency: 1,
-      opacity: 1,
+      opacity: 0.4,
       shadow: {
         blur: 5,
         color: {
