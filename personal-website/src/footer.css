@@ -12,8 +12,9 @@
 
 .designedBy{
     color: white;
-    bottom: 0;
+    bottom: 10px;
     width: inherit;
     height: 10px;
     position: absolute;
+    
 }
