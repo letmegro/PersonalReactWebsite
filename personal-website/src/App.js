@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
       
       </header>
-      <div className='info-div'>
+      <div id='info-div'>
         {welcomeHTML}
       </div>
     </div>
