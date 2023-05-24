@@ -1,9 +1,16 @@
 import React from "react";
+import JavaImg from "../images/java.png";
+import javascriptImg from "../images/javascript.png";
+import csImg from "../images/c-sharp.png"
+import html from "../images/html.png"
+import css from "../images/css.png"
+import typescript from "../images/typescript.png"
+
 
 function createListItem(item){
-  var language = document.createElement('li');
+  var language = document.createElement('img');
   language.className = 'list-item';
-  language.textContent = item;
+  language.src = item;
   return language;
 }
 
@@ -18,16 +25,31 @@ function proceedToSkills(){
 
   const section1 = document.createElement('h2');
   section1.className = "sentence-sec";
-  section1.innerHTML = "Languages:<br/>";
+  section1.innerHTML = "Languages (Markup, Styling Included):<br/>";
   parent.appendChild(section1);
 
   var list = document.createElement('ul');
-  list.appendChild(createListItem("Java"));
-  list.appendChild(createListItem("JavaScript"));
-
+  list.appendChild(createListItem(JavaImg));
+  list.appendChild(createListItem(javascriptImg));
+  list.appendChild(createListItem(csImg));
+  list.appendChild(createListItem(html));
+  list.appendChild(createListItem(css));
+  list.appendChild(createListItem(typescript));
   section1.appendChild(list);
 
-
+  const next_btn = document.createElement('button');
+  next_btn.id = 'next-btn';
+  const arrow_one = document.createElement('i');
+  arrow_one.className = 'right-arrow i-one';
+  const arrow_two = document.createElement('i');
+  arrow_two.className = 'right-arrow i-two';
+  const arrow_three = document.createElement('i');
+  arrow_three.className = 'right-arrow i-three';
+  next_btn.innerHTML = 'NEXT';
+  next_btn.appendChild(arrow_one);
+  next_btn.appendChild(arrow_two);
+  next_btn.appendChild(arrow_three);
+  section1.appendChild(next_btn);
   info_div.appendChild(parent);
 
     (

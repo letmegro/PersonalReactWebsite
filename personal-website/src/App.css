@@ -159,9 +159,14 @@ ul{
   position: relative;
   width: auto;
   display: inline-block;
+  align-items: start;
 }
-ul li{
-  text-align: start;
-  font-weight: 400;
-  left: 0;
+
+ul > img{
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 10px;
+  border: 3px transparent solid;
+  margin-right: 20px;
 }
