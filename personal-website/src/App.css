@@ -6,10 +6,167 @@
 }
 
 .App-header {
-  background-color: transparent;
+  background: url('./images/IMG_9877.JPG');
   min-height: 100vh;
+  background-size: 150% 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: brightness(30%);
   justify-content: center;
+}
+/* info div first page css */
+#info-div{
+  background-color: rgba(255, 255, 255, 0.876);
+  max-width: 40%;
+  width: 100%;
+  height: 55vh;
+  left: 10%;
+  bottom: 30%;
+  display: grid;
+  align-items: center;
+  z-index: 3;
+  position: absolute;
+  border-radius: 30px;
+  overflow-y: auto;
+  border: 17px transparent solid;
+}
+
+#info-div::-webkit-scrollbar{
+  width: 8px;
+  position: absolute;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+
+
+#info-div::-webkit-scrollbar-thumb{
+  background-color: black;
+  border-radius: 20px;
+}
+
+#welcome-h1{
+  opacity: 0;
+  padding-top: 10px;
+  animation: enterText 2s 1s 1 forwards;
+}
+
+.sentence-sec{
+  padding-top: 10px;
+  position: relative;
+  opacity: 0;
+  animation: enterText 2s 2s 1 forwards;
+}
+
+#next-btn{
+  margin-top: 20px;
+  font-weight: bold;
+  position:relative;
+  border-radius: 10px;
+  opacity: 0;
+  width: 100px;
+  padding: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.5s;
+  animation: enterBtn 2s 4s 1 forwards;
+ }
+
+@keyframes enterText{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#next-btn:hover{
+  background-color: rgb(228, 216, 216);
+  text-align: left;
+  padding-left: 15%;
+  width: 200px;
+  border-radius: 40px;
+  border: 3px rgb(70, 180, 58) solid;
+  transition: 0.5s;
+}
+
+#next-btn:hover .right-arrow{
+  transition: 1s;
+  opacity: 1;
+}
+
+#next-btn:active{
+  color: white;
+  background-color: rgb(54, 119, 47);
+}
+
+@keyframes enterBtn{
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0);
+  }
+  50%{
+    opacity: 1;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.593);
+  }
+}
+
+.i-one{
+  margin-left: 25%;
+  animation: color-transition 2s 0.7s infinite;
+}
+.i-two{
+  margin-left: 15%;
+  animation: color-transition 2s 0.4s infinite;
+}
+
+.i-three{
+  margin-left: 5%;
+  animation: color-transition 2s infinite;
+}
+
+@keyframes color-transition{
+  0% {
+    border-color:rgb(13, 137, 63)
+  }
+  70%{
+    border-color:rgba(13, 137, 63, 0.637)
+  }
+  100%{
+    border-color:rgb(7, 7, 7)
+  }
+}
+
+.right-arrow{
+  opacity: 0;
+  position: absolute;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+ul{
+  position: relative;
+  width: auto;
+  display: inline-block;
+  align-items: start;
+}
+
+ul > img{
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border-radius: 10px;
+  border: 3px transparent solid;
+  margin-right: 20px;
 }
