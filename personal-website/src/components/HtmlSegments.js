@@ -6,11 +6,30 @@ import html from "../images/html.png"
 import css from "../images/css.png"
 import typescript from "../images/typescript.png"
 
+function createPopup(id){
+  const text = document.createElement('p');
+  text.innerText = id;
+  text.className = 'popup-text';
+  const container = document.createElement('div');
+  container.className = 'popup-container';
+  container.appendChild(text);
+  container.id = id + '1';
+  const doc = document.getElementById(id);
+  console.log(doc);
+  doc.before(container);
+}
 
-function createListItem(item){
+function createListItem(item, name){
   var language = document.createElement('img');
   language.className = 'list-item';
+  language.id = name;
   language.src = item;
+  language.addEventListener("mouseenter", (e) => {
+    createPopup(name);
+  });
+  language.addEventListener("mouseleave", (e) => {
+    document.getElementById(name+'1').remove();
+  });
   return language;
 }
 
@@ -25,16 +44,16 @@ function proceedToSkills(){
 
   const section1 = document.createElement('h2');
   section1.className = "sentence-sec";
-  section1.innerHTML = "Languages (Markup, Styling Included):<br/>";
+  section1.innerHTML = "I am proficient in: <br/>";
   parent.appendChild(section1);
 
   var list = document.createElement('ul');
-  list.appendChild(createListItem(JavaImg));
-  list.appendChild(createListItem(javascriptImg));
-  list.appendChild(createListItem(csImg));
-  list.appendChild(createListItem(html));
-  list.appendChild(createListItem(css));
-  list.appendChild(createListItem(typescript));
+  list.appendChild(createListItem(JavaImg, 'Java'));
+  list.appendChild(createListItem(javascriptImg, 'JavaScript'));
+  list.appendChild(createListItem(csImg, 'CSharp'));
+  list.appendChild(createListItem(html, 'HTML5'));
+  list.appendChild(createListItem(css, 'CSS'));
+  list.appendChild(createListItem(typescript, 'TypeScript'));
   section1.appendChild(list);
 
   const next_btn = document.createElement('button');
