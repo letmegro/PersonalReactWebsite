@@ -8,7 +8,7 @@ import typescript from "../images/typescript.png"
 
 function createListPointHTML(item){
   const list_item = document.createElement('li');
-  list_item.className = 'list-item';
+  list_item.className = 'list-item-points';
   list_item.innerText = item;
   return list_item;
 }
@@ -30,12 +30,12 @@ function proceedToWhoAmI(){
   parent.appendChild(section);
 
   const list = document.createElement('ul');
-  list.className = 'list-of-points';
+  list.className = 'list-of-points sentence-sec';
   
   list.appendChild(createListPointHTML('Multi-tasker'));
   list.appendChild(createListPointHTML('Time-oriented'));
   list.appendChild(createListPointHTML('Team-oriented'));
-  list.className = "sentence-sec";
+
   parent.appendChild(list);
 
 

@@ -174,13 +174,15 @@ ul > .list-item{
 }
 
 .list-of-points{
-  width: 100px;
+  width: 120px;
   height: 70px;
   position: relative;
+  display: inline-block;
+  
 }
 
-ul > .list-of-points{
-  width: 100px;
-  height: 70px;
-  
+.list-item-points{
+  float: left;
+  width: 120px;
+  position: relative;
 }
