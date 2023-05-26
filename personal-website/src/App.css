@@ -162,7 +162,7 @@ ul{
   position: relative;
   width: auto;
   display: inline-block;
-  align-items: start;
+  align-items: flex-start;
 }
 
 ul > .list-item{
@@ -170,27 +170,17 @@ ul > .list-item{
   height: 70px;
   padding: 0;
   border-radius: 10px;
-  border: 3px transparent solid;
   margin-right: 20px;
-  cursor: pointer;
 }
 
-.popup-text{
-  color: black;
-  font-size: 15px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  left: 0;
+.list-of-points{
+  width: 100px;
+  height: 70px;
+  position: relative;
 }
 
-.popup-container{
-  display:inline-flex;
-  position:fixed;
-  width: 75px;
-  height: 75px;
-  background-color: white;
-  border: 1px solid black;
-  pointer-events: none;
-  border-radius: 30px;
+ul > .list-of-points{
+  width: 100px;
+  height: 70px;
+  
 }

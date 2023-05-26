@@ -6,17 +6,39 @@ import html from "../images/html.png"
 import css from "../images/css.png"
 import typescript from "../images/typescript.png"
 
-function createPopup(id){
-  const text = document.createElement('p');
-  text.innerText = id;
-  text.className = 'popup-text';
-  const container = document.createElement('div');
-  container.className = 'popup-container';
-  container.appendChild(text);
-  container.id = id + '1';
-  const doc = document.getElementById(id);
-  console.log(doc);
-  doc.before(container);
+function createListPointHTML(item){
+  const list_item = document.createElement('li');
+  list_item.className = 'list-item';
+  list_item.innerText = item;
+  return list_item;
+}
+
+function proceedToWhoAmI(){
+  const info_div = document.getElementById('info-div');
+  const parent = document.createElement('div');
+  info_div.innerHTML = "";
+  info_div.appendChild(parent);
+
+  const title = document.createElement('h1');
+  title.id = 'welcome-h1';
+  title.innerText = "Who Am I";
+  parent.appendChild(title);
+
+  const section = document.createElement('h2');
+  section.className = "sentence-sec";
+  section.innerHTML = "I am: <br/>";
+  parent.appendChild(section);
+
+  const list = document.createElement('ul');
+  list.className = 'list-of-points';
+  
+  list.appendChild(createListPointHTML('Multi-tasker'));
+  list.appendChild(createListPointHTML('Time-oriented'));
+  list.appendChild(createListPointHTML('Team-oriented'));
+  list.className = "sentence-sec";
+  parent.appendChild(list);
+
+
 }
 
 function createListItem(item, name){
@@ -24,12 +46,6 @@ function createListItem(item, name){
   language.className = 'list-item';
   language.id = name;
   language.src = item;
-  language.addEventListener("mouseenter", (e) => {
-    createPopup(name);
-  });
-  language.addEventListener("mouseleave", (e) => {
-    document.getElementById(name+'1').remove();
-  });
   return language;
 }
 
@@ -55,9 +71,12 @@ function proceedToSkills(){
   list.appendChild(createListItem(css, 'CSS'));
   list.appendChild(createListItem(typescript, 'TypeScript'));
   section1.appendChild(list);
+  section1.appendChild(document.createElement('br'));
 
+  //next button in js
   const next_btn = document.createElement('button');
   next_btn.id = 'next-btn';
+  next_btn.addEventListener('click', e => proceedToWhoAmI());
   const arrow_one = document.createElement('i');
   arrow_one.className = 'right-arrow i-one';
   const arrow_two = document.createElement('i');
@@ -70,28 +89,6 @@ function proceedToSkills(){
   next_btn.appendChild(arrow_three);
   section1.appendChild(next_btn);
   info_div.appendChild(parent);
-
-    (
-      <div>
-          <h1 id='welcome-h1'>
-            My Skill Set
-          </h1>
-          <h2 className='sentence-sec'>
-           Programming Languages:
-          </h2>
-          <h2 className='sentence-sec'>
-            And this is my online resume
-          </h2>
-          <h2 className='sentence-sec'>
-             And Portfolio.
-          </h2>
-          <button id='next-btn'>
-            NEXT
-            <i className='right-arrow i-one'/>
-            <i className='right-arrow i-two'/>
-            <i className='right-arrow i-three'/>        </button>
-      </div>
-    );
  
 }
 export const welcomeHTML = 
@@ -117,6 +114,3 @@ export const welcomeHTML =
         </button>
     </div>
 );
-
-// const skillsHTML = 
-  
