@@ -13,6 +13,36 @@ function createListPointHTML(item){
   return list_item;
 }
 
+function createCSSStickMan(){
+  const master_div = document.createElement('div');
+  master_div.className = 'right-figure';
+  const head = document.createElement('div');
+  head.id = 'stick-head';
+  master_div.appendChild(head);
+
+  const body = document.createElement('div');
+  body.id = 'stick-body';
+  const midbody = document.createElement('div');
+  midbody.id = 'stick-weist';
+  body.appendChild(midbody);
+  const rArm = document.createElement('div');
+  rArm.id = 'right-arm';
+  const lArm = document.createElement('div');
+  lArm.id = 'left-arm';
+  body.appendChild(rArm);
+  body.appendChild(lArm);
+
+  const rLeg = document.createElement('div');
+  rLeg.id = 'right-leg';
+  const lLeg = document.createElement('div');
+  lLeg.id = 'left-leg';
+  body.appendChild(rLeg);
+  body.appendChild(lLeg);
+  master_div.appendChild(body);
+
+  return master_div;
+}
+
 function proceedToWhoAmI(){
   const info_div = document.getElementById('info-div');
   const parent = document.createElement('div');
@@ -30,13 +60,39 @@ function proceedToWhoAmI(){
   parent.appendChild(section);
 
   const list = document.createElement('ul');
-  list.className = 'list-of-points sentence-sec';
+  list.className = 'list-of-points';
   
   list.appendChild(createListPointHTML('Multi-tasker'));
   list.appendChild(createListPointHTML('Time-oriented'));
   list.appendChild(createListPointHTML('Team-oriented'));
-
-  parent.appendChild(list);
+  list.appendChild(createListPointHTML('Dedicated to my work'));
+  list.appendChild(createListPointHTML('Quick learner'));
+  list.appendChild(createListPointHTML('Willing to learn'));
+  list.appendChild(createListPointHTML('Motivated'));
+  list.appendChild(createListPointHTML('Problem solver'));
+  const container = document.createElement('div');
+  container.appendChild(list);
+  container.className = 'sentence-sec';
+  container.appendChild(createCSSStickMan());
+  parent.appendChild(container);
+  
+  const button_holder = document.createElement('div');
+  button_holder.id = 'button-div';
+  const next_btn = document.createElement('button');
+  next_btn.id = 'next-btn';
+  next_btn.addEventListener('click', e => proceedToWhoAmI());
+  const arrow_one = document.createElement('i');
+  arrow_one.className = 'right-arrow i-one';
+  const arrow_two = document.createElement('i');
+  arrow_two.className = 'right-arrow i-two';
+  const arrow_three = document.createElement('i');
+  arrow_three.className = 'right-arrow i-three';
+  next_btn.innerHTML = 'NEXT';
+  next_btn.appendChild(arrow_one);
+  next_btn.appendChild(arrow_two);
+  next_btn.appendChild(arrow_three);
+  button_holder.appendChild(next_btn);
+  info_div.appendChild(button_holder);
 
 
 }
