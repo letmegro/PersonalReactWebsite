@@ -244,10 +244,12 @@ ul > .list-item{
   width: 90px;
   background-color: black;
   border: 1px solid black;
-  right: -5px;
-  top: 10px;
+  right: 1px;
+  top: 30px;
   transform: rotate(30deg);
   position: absolute;
+  transform-origin: 100%;
+  animation: wave 2s alternate infinite ease-in-out;
 }
 
 #left-arm{
@@ -259,6 +261,15 @@ ul > .list-item{
   top: 41%;
   transform: rotate(30deg);
   position: absolute;
+}
+
+@keyframes wave {
+  0%{
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: rotate(40deg);
+  }
 }
 
 #right-leg{
@@ -289,6 +300,7 @@ ul > .list-item{
   right: 37%;
   transition: 0.5s;
 }
+
 #button-div:hover{
   right:25%;
   transition: 0.5s;
