@@ -9,6 +9,7 @@ import typescript from "../images/typescript.png"
 function createListPointHTML(item){
   const list_item = document.createElement('li');
   list_item.className = 'list-item-points';
+  
   list_item.innerText = item;
   return list_item;
 }
@@ -61,11 +62,16 @@ function proceedToWhoAmI(){
 
   const list = document.createElement('ul');
   list.className = 'list-of-points';
-  
+
+  const i = document.createElement('p');
+  i.id = 'letter-k';
+  i.innerText = 'k';
+
   list.appendChild(createListPointHTML('Multi-tasker'));
   list.appendChild(createListPointHTML('Time-oriented'));
   list.appendChild(createListPointHTML('Team-oriented'));
-  list.appendChild(createListPointHTML('Dedicated to my work'));
+  list.appendChild(createListPointHTML('Dedicated to my wor'));
+  list.appendChild(i);
   list.appendChild(createListPointHTML('Quick learner'));
   list.appendChild(createListPointHTML('Willing to learn'));
   list.appendChild(createListPointHTML('Motivated'));
@@ -93,7 +99,6 @@ function proceedToWhoAmI(){
   next_btn.appendChild(arrow_three);
   button_holder.appendChild(next_btn);
   info_div.appendChild(button_holder);
-
 
 }
 

@@ -305,3 +305,20 @@ ul > .list-item{
   right:25%;
   transition: 0.5s;
 }
+
+#letter-k{
+  position: absolute;
+  right: 14px;
+  top: 47px;
+  animation: move-letter 2s infinite alternate-reverse;
+}
+
+@keyframes move-letter {
+  83%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+
+}
