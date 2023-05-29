@@ -6,10 +6,31 @@ import html from "../images/html.png"
 import css from "../images/css.png"
 import typescript from "../images/typescript.png"
 
+function DownloadResumeHTML(){
+  const info_div = document.getElementById('info-div');
+  const parent = document.createElement('div');
+  info_div.innerHTML = "";
+  info_div.appendChild(parent);
+
+  const title = document.createElement('h1');
+  title.id = 'welcome-h1';
+  title.innerText = "There are cool features within the website!";
+  parent.appendChild(title);
+
+  const p1 = document.createElement('h2');
+  p1.className = "sentence-sec";
+  p1.innerText = "Some Hidden some not so Explore and have fun!";
+  parent.appendChild(p1);
+  const p2 = document.createElement('h2');
+  p2.className = "sentence-sec";
+  p2.innerText = "You may download my resume below!";
+  parent.appendChild(p2);
+  
+}
+
 function createListPointHTML(item){
   const list_item = document.createElement('li');
   list_item.className = 'list-item-points';
-  
   list_item.innerText = item;
   return list_item;
 }
@@ -26,6 +47,7 @@ function createCSSStickMan(){
   const midbody = document.createElement('div');
   midbody.id = 'stick-weist';
   body.appendChild(midbody);
+
   const rArm = document.createElement('div');
   rArm.id = 'right-arm';
   const lArm = document.createElement('div');
@@ -63,19 +85,16 @@ function proceedToWhoAmI(){
   const list = document.createElement('ul');
   list.className = 'list-of-points';
 
-  const i = document.createElement('p');
-  i.id = 'letter-k';
-  i.innerText = 'k';
-
   list.appendChild(createListPointHTML('Multi-tasker'));
   list.appendChild(createListPointHTML('Time-oriented'));
   list.appendChild(createListPointHTML('Team-oriented'));
-  list.appendChild(createListPointHTML('Dedicated to my wor'));
-  list.appendChild(i);
+  list.appendChild(createListPointHTML('Dedicated to my work'));
   list.appendChild(createListPointHTML('Quick learner'));
   list.appendChild(createListPointHTML('Willing to learn'));
   list.appendChild(createListPointHTML('Motivated'));
   list.appendChild(createListPointHTML('Problem solver'));
+  list.appendChild(createListPointHTML('Creative'));
+ 
   const container = document.createElement('div');
   container.appendChild(list);
   container.className = 'sentence-sec';
@@ -86,7 +105,7 @@ function proceedToWhoAmI(){
   button_holder.id = 'button-div';
   const next_btn = document.createElement('button');
   next_btn.id = 'next-btn';
-  next_btn.addEventListener('click', e => proceedToWhoAmI());
+  next_btn.addEventListener('click', e => DownloadResumeHTML());
   const arrow_one = document.createElement('i');
   arrow_one.className = 'right-arrow i-one';
   const arrow_two = document.createElement('i');

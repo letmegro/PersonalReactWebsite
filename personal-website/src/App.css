@@ -246,10 +246,9 @@ ul > .list-item{
   border: 1px solid black;
   right: 1px;
   top: 30px;
-  transform: rotate(30deg);
   position: absolute;
   transform-origin: 100%;
-  animation: wave 2s alternate infinite ease-in-out;
+  
 }
 
 #left-arm{
@@ -257,19 +256,7 @@ ul > .list-item{
   width: 90px;
   background-color: black;
   border: 1px solid black;
-  left: -5px;
-  top: 41%;
-  transform: rotate(30deg);
   position: absolute;
-}
-
-@keyframes wave {
-  0%{
-    transform: rotate(-10deg);
-  }
-  100%{
-    transform: rotate(40deg);
-  }
 }
 
 #right-leg{
@@ -306,19 +293,69 @@ ul > .list-item{
   transition: 0.5s;
 }
 
-#letter-k{
-  position: absolute;
-  right: 14px;
-  top: 47px;
-  animation: move-letter 2s infinite alternate-reverse;
+@media screen  and (min-width: 967px) {
+  #left-arm{
+    transform-origin: 0%;
+    left: 0;
+    top: 21%;
+    transform: rotate(30deg);
+  }
+  #right-arm{
+    animation: wave 2s alternate infinite ease-in-out;
+    
+  }
+  @keyframes wave {
+    0%{
+      transform: rotate(-10deg);
+    }
+    100%{
+      transform: rotate(40deg);
+    }
+  }
 }
 
-@keyframes move-letter {
-  83%{
-    transform: translateY(0);
+@media screen  and (max-width: 966px) {
+  #right-arm{
+    top: 27px;
+    right:2px;
+    transform: rotate(-50deg);
   }
-  100%{
-    transform: translateY(5px);
+  #left-arm{
+    transform-origin: 0%;
+    left: 0;
+    top: 21%;
+    transform: rotate(30deg);
+    animation: wave 2s alternate infinite ease-in-out;
   }
 
+  @keyframes wave {
+    0%{
+      transform: rotate(-10deg);
+    }
+    100%{
+      transform: rotate(40deg);
+    }
+  }
+}
+
+/* use for text colour shift easter egg */
+@keyframes colourshift {
+  0%{
+    color: black;
+  }
+  20%{
+    color: #287b2b;
+  }
+  40%{
+    color: #d0a738;
+  }
+  60%{
+    color: #db3923;
+  }
+  80%{
+    color: #22b5da;
+  }
+  100%{
+    color: #3148ae;
+  }
 }
