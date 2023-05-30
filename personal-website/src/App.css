@@ -40,7 +40,7 @@
 
 @media screen and (min-width: 1001px) {
   #info-div{
-    background-color: rgba(255, 255, 255, 0.876);
+    background-color: rgba(255, 255, 255, 0.909);
     max-width: 25%;
     min-width: 400px;
     width: 100%;
@@ -358,4 +358,100 @@ ul > .list-item{
   100%{
     color: #3148ae;
   }
+}
+
+#download-button{
+  width: 140px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: white;
+}
+
+#download-button:hover{
+  border-radius: 25px;
+  transition: 0.5s;
+  background-color: aliceblue;
+}
+
+#restart-button{
+  width: 140px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: white;
+}
+
+#restart-button:hover{
+  border-radius: 25px;
+  transition: 0.5s;
+  background-color: aliceblue;
+}
+
+#icon2{
+  width: 20px;
+  height: 20px;
+  top: 28px;
+  margin-left: 4px;
+  position: absolute;
+  transition: 1s;
+  opacity: 0;
+}
+
+#restart-button:hover > #icon2{
+  opacity: 1;
+  transition: 1s;
+}
+
+.down-arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+#download-button:hover > #da1{
+  animation: fade 1s infinite ease-in-out;
+}
+
+#download-button:hover > #da2{
+  animation: fade 1s 0.3s infinite ease-in-out;
+}
+
+#download-button:hover > #da3{
+  animation: fade 1s 0.5s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+#da1, #da2, #da3{
+  
+  position: absolute;
+  margin-left: 5px;
+  opacity: 0;
+
+}
+
+#da1{
+  top:23px;
+}
+
+#da3{
+  top: 41px;
 }

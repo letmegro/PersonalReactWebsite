@@ -5,6 +5,7 @@ import csImg from "../images/c-sharp.png"
 import html from "../images/html.png"
 import css from "../images/css.png"
 import typescript from "../images/typescript.png"
+import refresh from "../images/refresh.png";
 
 function DownloadResumeHTML(){
   const info_div = document.getElementById('info-div');
@@ -19,12 +20,42 @@ function DownloadResumeHTML(){
 
   const p1 = document.createElement('h2');
   p1.className = "sentence-sec";
-  p1.innerText = "Some Hidden some not so Explore and have fun!";
+  p1.innerText = "Some Hidden some not. so Explore and have fun!";
   parent.appendChild(p1);
   const p2 = document.createElement('h2');
   p2.className = "sentence-sec";
-  p2.innerText = "You may download my resume below!";
+  p2.innerText = "If you'd like you may download my resume below!";
   parent.appendChild(p2);
+
+  const button_container = document.createElement('div');
+  button_container.id = 'button-container';
+  button_container.className = 'sentence-sec';
+  const download = document.createElement('button');
+  download.id = 'download-button';
+  download.innerText = 'Download';
+  const da1 = document.createElement('i');
+  da1.className = 'down-arrow';
+  da1.id = 'da1';
+  const da2 = document.createElement('i');
+  da2.className = 'down-arrow';
+  da2.id = 'da2';
+  const da3 = document.createElement('i');
+  da3.className = 'down-arrow';
+  da3.id = 'da3';
+  download.appendChild(da1);
+  download.appendChild(da2);
+  download.appendChild(da3);
+
+  const restart = document.createElement('button');
+  restart.id = 'restart-button';
+  restart.innerText = 'Restart';
+  const icon2 = document.createElement('img');
+  icon2.src = refresh;
+  icon2.id = 'icon2';
+  restart.appendChild(icon2);
+  button_container.appendChild(restart);
+  button_container.appendChild(download);
+  parent.appendChild(button_container);
   
 }
 
