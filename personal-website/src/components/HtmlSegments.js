@@ -45,16 +45,20 @@ function DownloadResumeHTML(){
   download.appendChild(da1);
   download.appendChild(da2);
   download.appendChild(da3);
+  const downloadlink = document.createElement('a');
+  downloadlink.href = process.env.REACT_APP_RESUME_LINK;
+  console.log(process.env.REACT_APP_RESUME_LINK);
+  downloadlink.appendChild(download);
 
   const restart = document.createElement('button');
   restart.id = 'restart-button';
-  restart.innerText = 'Restart';
+  restart.innerText = 'To start';
   const icon2 = document.createElement('img');
   icon2.src = refresh;
   icon2.id = 'icon2';
   restart.appendChild(icon2);
   button_container.appendChild(restart);
-  button_container.appendChild(download);
+  button_container.appendChild(downloadlink);
   parent.appendChild(button_container);
   
 }
