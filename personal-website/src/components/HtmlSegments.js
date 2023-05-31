@@ -7,6 +7,12 @@ import css from "../images/css.png"
 import typescript from "../images/typescript.png"
 import refresh from "../images/refresh.png";
 
+function backToStart(){
+  // const info_div = document.getElementById('info-div');
+  // info_div.innerHTML = "";
+  // info_div.insert(welcomeHTML);
+}
+
 function DownloadResumeHTML(){
   const info_div = document.getElementById('info-div');
   const parent = document.createElement('div');
@@ -47,12 +53,12 @@ function DownloadResumeHTML(){
   download.appendChild(da3);
   const downloadlink = document.createElement('a');
   downloadlink.href = process.env.REACT_APP_RESUME_LINK;
-  console.log(process.env.REACT_APP_RESUME_LINK);
   downloadlink.appendChild(download);
 
   const restart = document.createElement('button');
   restart.id = 'restart-button';
-  restart.innerText = 'To start';
+  restart.innerText = 'Back to start';
+  restart.addEventListener('click', e => backToStart());
   const icon2 = document.createElement('img');
   icon2.src = refresh;
   icon2.id = 'icon2';
