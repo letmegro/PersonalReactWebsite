@@ -1,9 +1,8 @@
 import './App.css';
 import Particle from './components/Particle';
 import { welcomeHTML } from './components/HtmlSegments';
-import DOMPurify from 'dompurify';
 
-let cleanHTML = DOMPurify.sanitize(welcomeHTML);
+
 
 function App() {
   return (
@@ -12,8 +11,8 @@ function App() {
       <header className="App-header">
       
       </header>
-      <div id='info-div' dangerouslySetInnerHTML={{__html: cleanHTML}} >
-        
+      <div id='info-div' >
+        {welcomeHTML}
       </div>
     </div>
   );

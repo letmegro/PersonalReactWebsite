@@ -7,12 +7,6 @@ import css from "../images/css.png"
 import typescript from "../images/typescript.png"
 import refresh from "../images/refresh.png";
 
-function backToStart(){
-  // const info_div = document.getElementById('info-div');
-  // info_div.innerHTML = "";
-  // info_div.insert(welcomeHTML);
-}
-
 function DownloadResumeHTML(){
   const info_div = document.getElementById('info-div');
   const parent = document.createElement('div');
@@ -58,7 +52,7 @@ function DownloadResumeHTML(){
   const restart = document.createElement('button');
   restart.id = 'restart-button';
   restart.innerText = 'Back to start';
-  restart.addEventListener('click', e => backToStart());
+  restart.addEventListener('click', e => returnToWelcomeHTML());
   const icon2 = document.createElement('img');
   icon2.src = refresh;
   icon2.id = 'icon2';
@@ -212,6 +206,52 @@ function proceedToSkills(){
   info_div.appendChild(parent);
  
 }
+
+function returnToWelcomeHTML(){
+  const info_div = document.getElementById('info-div');
+  const parent = document.createElement('div');
+  info_div.innerHTML = '';
+  info_div.appendChild(parent);
+
+  const title = document.createElement('h1');
+  title.innerText = 'Welcome';
+  title.id = 'welcome-h1';
+  parent.appendChild(title);
+
+  const subtitle = document.createElement('h2');
+  subtitle.innerText = 'My name is Nicolas Korsunski';
+  subtitle.className = 'sentence-sec';
+
+  const subtitle2 = document.createElement('h2');
+  subtitle2.innerText = 'And this is my online resume';
+  subtitle2.className = 'sentence-sec';
+
+  const subtitle3 = document.createElement('h2');
+  subtitle3.innerText = 'And Portfolio.';
+  subtitle3.className = 'sentence-sec';
+
+  parent.appendChild(subtitle);
+  parent.appendChild(subtitle2);
+  parent.appendChild(subtitle3);
+
+  const next_btn = document.createElement('button');
+  next_btn.id = 'next-btn';
+  next_btn.addEventListener('click', e => proceedToSkills());
+  const arrow_one = document.createElement('i');
+  arrow_one.className = 'right-arrow i-one';
+  const arrow_two = document.createElement('i');
+  arrow_two.className = 'right-arrow i-two';
+  const arrow_three = document.createElement('i');
+  arrow_three.className = 'right-arrow i-three';
+  next_btn.innerHTML = 'NEXT';
+  next_btn.appendChild(arrow_one);
+  next_btn.appendChild(arrow_two);
+  next_btn.appendChild(arrow_three);
+
+  parent.appendChild(next_btn);
+
+}
+
 export const welcomeHTML = 
   (
     <div>
