@@ -4,7 +4,6 @@ import { welcomeHTML } from './components/HtmlSegments';
 
 
 
-
 function App() {
   return (
     <div className="App">
@@ -12,7 +11,7 @@ function App() {
       <header className="App-header">
       
       </header>
-      <div id='info-div'>
+      <div id='info-div' >
         {welcomeHTML}
       </div>
     </div>
