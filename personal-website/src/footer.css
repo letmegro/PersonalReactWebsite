@@ -18,3 +18,20 @@
     position: absolute;
     
 }
+
+.contact{
+    text-decoration: none;
+    color: white;
+    margin: 0 60px 0 60px;
+}
+
+.contact:hover{
+    color: rgba(255, 255, 255, 0.753);
+}
+
+.link-container{
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    justify-content: center;
+}

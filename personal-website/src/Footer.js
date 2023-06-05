@@ -6,16 +6,18 @@ function Footer(){
             <p className="designedBy">
                 Site Designed By: Nicolas Korsunski
             </p>
-            <a href="sf">
-                <p className='contact'>
-                    Contact
-                </p>
-            </a>
-            <a href="gd">
-                <p>
-                    About me
-                </p>
-            </a>
+            <div className='link-container'>
+                <a className='contact' href="sf">
+                    <p>
+                        Contact
+                    </p>
+                </a>
+                <a className='contact' href="gd">
+                    <p>
+                        About me
+                    </p>
+                </a>
+            </div>
         </div>
     );
 }

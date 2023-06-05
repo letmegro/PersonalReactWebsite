@@ -87,10 +87,8 @@
 }
 
 #next-btn{
-  margin-top: 20px;
   font-weight: bold;
   position:relative;
-  bottom: 30px;
   border-radius: 10px;
   opacity: 0;
   width: 100px;
@@ -100,6 +98,10 @@
   overflow: hidden;
   transition: 0.5s;
   animation: enterBtn 2s 4s 1 forwards;
+ }
+
+ .whoami-btn{
+   top: 130px;
  }
 
 @keyframes enterText{
