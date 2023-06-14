@@ -140,6 +140,7 @@ function proceedToWhoAmI(){
   button_holder.id = 'button-div';
   const next_btn = document.createElement('button');
   next_btn.id = 'next-btn';
+  next_btn.className = 'whoami-btn'
   next_btn.addEventListener('click', e => DownloadResumeHTML());
   const arrow_one = document.createElement('i');
   arrow_one.className = 'right-arrow i-one';
