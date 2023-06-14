@@ -1,7 +1,8 @@
 import './App.css';
 import Particle from './components/Particle';
 import { welcomeHTML } from './components/HtmlSegments';
-
+import { contactpage } from "./pages/ContactPage";
+import { mainpage } from "./pages/MainPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           {welcomeHTML}
       </div>
     </div> 
-  );
+  ); 
 }
 
 export default App;

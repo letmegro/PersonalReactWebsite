@@ -1,4 +1,5 @@
 import './footer.css';
+// import { Link } from 'react-router-dom';
 // add hyperlinks to detailedd pages in the footer.
 function Footer(){
     return (
